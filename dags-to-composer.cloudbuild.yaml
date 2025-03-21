@@ -1,6 +1,6 @@
 steps:
   # install dependencies
-  - name: python
+  - name: python:3.10
     entrypoint: pip
     args: ["install", "-r", "utils/requirements.txt", "--user"]
 
@@ -17,8 +17,8 @@ steps:
     timeout: 3600s
     
   # run
-  - name: python
-    entrypoint: python
+  - name: python:3.10
+    entrypoint: python3.10
     args: ["utils/add_dags_to_composer.py", "--dags_directory=${_DAGS_DIRECTORY}", "--dags_bucket=${_DAGS_BUCKET}"]
 
 options:
